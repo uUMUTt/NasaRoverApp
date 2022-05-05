@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="photo"
+            type="com.example.nasaroverapp.model.PhotoByRover" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        app:cardCornerRadius="15dp"
+        app:cardMaxElevation="8dp">
+
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="450dp">
+
+            <ImageView
+                android:id="@+id/ivPopup"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+                android:loadImageToRow="@{photo.img_src}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivPopup"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1">
+
+
+                    <TextView
+                        android:id="@+id/roverName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@{photo.rover.name}"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/tvRoverTitle"
+                        app:layout_constraintStart_toEndOf="@+id/tvRoverTitle" />
+
+                    <TextView
+                        android:id="@+id/earthDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@{photo.earth_date}"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvEarthDateTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCameraTitle" />
+
+                    <TextView
+                        android:id="@+id/tvRoverTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:text="Rover : "
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/cameraName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:text="@{photo.camera.name}"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/tvCameraTitle"
+                        app:layout_constraintStart_toEndOf="@+id/tvCameraTitle" />
+
+                    <TextView
+                        android:id="@+id/tvCameraTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Camera : "
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/roverName" />
+
+                    <TextView
+                        android:id="@+id/tvEarthDateTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date : "
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/earthDate"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1">
+
+
+                    <TextView
+                        android:id="@+id/tvLaunchDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@{photo.rover.launch_date}"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/tvLaunchDateTitle"
+                        app:layout_constraintStart_toEndOf="@+id/tvLaunchDateTitle" />
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@{photo.rover.status}"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvStatusTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLandingDateTitle" />
+
+                    <TextView
+                        android:id="@+id/tvLaunchDateTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:text="Launch Date : "
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvLandingDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:text="@{photo.rover.landing_date}"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/tvLandingDateTitle"
+                        app:layout_constraintStart_toEndOf="@+id/tvLaunchDateTitle" />
+
+                    <TextView
+                        android:id="@+id/tvLandingDateTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Landing Date : "
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLaunchDate" />
+
+                    <TextView
+                        android:id="@+id/tvStatusTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status : "
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/tvStatus"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
