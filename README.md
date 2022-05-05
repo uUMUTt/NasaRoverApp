@@ -1,5 +1,5 @@
 # Nasa Rover App
-
+An application that displays photos taken by NASA's rover vehicles on the surface of Mars.
 
 ## Tech Stack 
 - MVVM
@@ -11,7 +11,7 @@
 - Glide
 
 ## API
-API Link : ![Api Link]("https://api.nasa.gov/")
+API Link : [Api Link](https://api.nasa.gov/)
 
 
 ![VocabularyApp](/gif/NasaRoverAppGif.gif)
